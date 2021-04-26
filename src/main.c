@@ -1,14 +1,12 @@
-#include "../inc/passed_count.h"
+#include "../inc/count_till_eof.h"
+#include "../inc/flush.h"
 #include <stdio.h>
 
 int main(void) {
-  printf("Enter the number of students: ");
-  size_t n = 0;
-  scanf("%zu", &n);
-  printf("Enter the minimum number of marks that student must have to award "
-         "him/her pass: ");
-  size_t passed = 0;
-  scanf("%zu", &passed);
-  printf("The number student awarded pass are: %zu\n", pass_count(n, passed));
+  printf("Enter the minimum mark needed to award a student pass: ");
+  size_t m = 0;
+  scanf("%zu", &m);
+  flush_buffer();
+  printf("passed : %zu\n", count_till_eof(m));
   return 0;
 }
